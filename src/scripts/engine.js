@@ -29,7 +29,7 @@ const changeFoodPosition = () => {
 
 const handleGameOver = () => {
     clearInterval(setIntervalId);
-    alert("Game Over! Press OK to replay...");
+    alert("Fim de Jogo! Tente novamente.");
     location.reload();
 }
 
@@ -68,12 +68,11 @@ const initGame = () => {
         changeFoodPosition();
         snakeBody.push([foodX, foodY]);
         score++;
-        scoreElement.innerText = `${score}`;
+        scoreElement.innerText = `Pontuação: ${score}`;
     }
 
     for (let i = snakeBody.length - 1; i > 0; i--) {
-        snakeBody[i] = snakeBody[i - 1];
-        
+        snakeBody[i] = snakeBody[i - 1];  
     }
 
     snakeBody[0] = [snakeX, snakeY];
